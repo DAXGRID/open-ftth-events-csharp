@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OpenFTTH.Events.Core.Infos
 {
-    public class LifecyleInfo
+    public class LifecycleInfo
     {
         private readonly DeploymentStateEnum? _deploymentState;
         public DeploymentStateEnum? DepploymentState => _deploymentState;
@@ -15,7 +15,7 @@ namespace OpenFTTH.Events.Core.Infos
         private readonly DateTime? _removalDate;
         public DateTime? RemovalDate => _removalDate;
 
-        public LifecyleInfo(DeploymentStateEnum? deploymentState, DateTime? installationDate, DateTime? removalDate)
+        public LifecycleInfo(DeploymentStateEnum? deploymentState, DateTime? installationDate, DateTime? removalDate)
         {
             _deploymentState = deploymentState;
             _installationDate = installationDate;

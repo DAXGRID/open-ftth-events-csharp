@@ -23,8 +23,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly RouteSegmentInfo? _routeSegmentInfo;
         public RouteSegmentInfo? RouteSegmentInfo => _routeSegmentInfo;
         
-        public RouteSegmentAdded(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, LifecyleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo, Guid segmentId, Guid fromNodeId, Guid toNodeId, string geometry, RouteSegmentInfo? routeSegmentInfo) 
-            : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo, lifecyleInfo, mappingInfo, safetyInfo)
+        public RouteSegmentAdded(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, NamingInfo? namingInfo, LifecycleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo, Guid segmentId, Guid fromNodeId, Guid toNodeId, string geometry, RouteSegmentInfo? routeSegmentInfo) 
+            : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo, namingInfo, lifecyleInfo, mappingInfo, safetyInfo)
         {
             _segmentId = segmentId;
             _fromNodeId = fromNodeId;
