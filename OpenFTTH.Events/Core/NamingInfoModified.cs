@@ -5,13 +5,13 @@ using System.Text;
 
 namespace OpenFTTH.Events.Core
 {
-    public class NamingInfoModified : CommandEvent
+    public class NamingInfoModified : ObjectInfoModified
     {
         private readonly NamingInfo? _namingInfo;
         public NamingInfo? NamingInfo => _namingInfo;
 
-        public NamingInfoModified(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, NamingInfo? namingInfo)
-          : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public NamingInfoModified(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid aggregateId, string aggregateType, NamingInfo? namingInfo)
+          : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo, aggregateId, aggregateType)
         {
             _namingInfo = namingInfo;
         }
