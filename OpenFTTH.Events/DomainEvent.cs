@@ -10,16 +10,22 @@ namespace OpenFTTH.Events
     /// </summary>
     public class DomainEvent : IDomainEvent, IRequest
     {
+        public long EventSequenceNumber { get; set; }
+
         private readonly string _eventType;
         public string EventType => _eventType;
 
         private readonly Guid _eventId;
         public Guid EventId => _eventId;
-       
-        public DomainEvent(string eventType, Guid eventId)
+
+        private readonly DateTime _eventTimestamp;
+        public DateTime EventTimestamp => _eventTimestamp;
+
+        public DomainEvent(string eventType, Guid eventId, DateTime eventTimestamp)
         {
             _eventType = eventType;
             _eventId = eventId;
+            _eventTimestamp = eventTimestamp;
         }
     }
 }

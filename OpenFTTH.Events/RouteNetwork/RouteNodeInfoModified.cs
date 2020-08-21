@@ -14,8 +14,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly RouteNodeInfo? _routeNodeInfo;
         public RouteNodeInfo? RouteNodeInfo => _routeNodeInfo;
 
-        public RouteNodeInfoModified(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid nodeId, RouteNodeInfo? routeNodeInfo)
-          : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public RouteNodeInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid nodeId, RouteNodeInfo? routeNodeInfo)
+          : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
         {
             _nodeId = nodeId;
             _routeNodeInfo = routeNodeInfo;

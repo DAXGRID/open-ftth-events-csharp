@@ -13,8 +13,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly string _geometry;
         public string Geometry => _geometry;
 
-        public RouteNodeGeometryModified(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid nodeId, string geometry) 
-            : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public RouteNodeGeometryModified(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid nodeId, string geometry) 
+            : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
         {
             _nodeId = nodeId;
             _geometry = geometry;

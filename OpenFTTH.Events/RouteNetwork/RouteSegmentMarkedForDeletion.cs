@@ -10,8 +10,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly Guid _segmentId;
         public Guid SegmentId => _segmentId;
 
-        public RouteSegmentMarkedForDeletion(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid segmentId) 
-            : base(eventType, eventId, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public RouteSegmentMarkedForDeletion(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid segmentId) 
+            : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
         {
             _segmentId = segmentId;
         }

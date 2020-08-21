@@ -31,7 +31,7 @@ namespace OpenFTTH.Events
         private readonly string? _applicationInfo;
         public string? ApplicationInfo => _applicationInfo;
 
-        public CommandEvent(string eventType, Guid eventId, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo) : base(eventType, eventId)
+        public CommandEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo) : base(eventType, eventId, eventTimestamp)
         {
             _cmdType = cmdType;
             _cmdId = cmdId;
