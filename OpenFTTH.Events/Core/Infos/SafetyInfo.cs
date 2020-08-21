@@ -6,18 +6,15 @@ namespace OpenFTTH.Events.Core.Infos
 {
     public class SafetyInfo
     {
-        private readonly string? _classification;
-        public string? Classification => _classification;
-
-        private readonly string? _remark;
-        public string? Remark => _remark;
+        public string? Classification { get; set; }
+        public string? Remark { get; set; }
 
         public SafetyInfo() { }
 
         public SafetyInfo(string? classification, string? remark)
         {
-            _classification = classification;
-            _remark = remark;
+            Classification = classification;
+            Remark = remark;
         }
     }
 }

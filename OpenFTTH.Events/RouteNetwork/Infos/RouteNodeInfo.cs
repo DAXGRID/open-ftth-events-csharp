@@ -6,20 +6,15 @@ namespace OpenFTTH.Events.RouteNetwork.Infos
 {
     public class RouteNodeInfo
     {
-        private readonly RouteNodeKindEnum? _kind;
-        public RouteNodeKindEnum? Kind => _kind;
-
-
-        private readonly RouteNodeFunctionEnum? _function;
-        public RouteNodeFunctionEnum? Function => _function;
-
+        public RouteNodeKindEnum? Kind { get; set; }
+        public RouteNodeFunctionEnum? Function { get; set; }
 
         public RouteNodeInfo() { }
 
         public RouteNodeInfo(RouteNodeKindEnum? kind, RouteNodeFunctionEnum? function)
         {
-            _kind = kind;
-            _function = function;
+            Kind = kind;
+            Function = function;
         }
     }
 }

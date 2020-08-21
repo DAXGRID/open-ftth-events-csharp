@@ -9,22 +9,19 @@ namespace OpenFTTH.Events.Core.Infos
         /// <summary>
         /// AKA short name
         /// </summary>
-        private readonly string? _name;
-        public string? Name => _name;
-
-        private readonly string? _description;
+        public string? Name { get; set; }
 
         /// <summary>
         /// AKA long name
         /// </summary>
-        public string? Description => _description;
+        public string? Description { get; set; }
 
         public NamingInfo() { }
 
         public NamingInfo(string? name, string? description)
         {
-            _name = name;
-            _description = description;
+            Name = name;
+            Description = description;
         }
     }
 }
