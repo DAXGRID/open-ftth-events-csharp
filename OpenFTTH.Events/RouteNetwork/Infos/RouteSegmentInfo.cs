@@ -15,6 +15,8 @@ namespace OpenFTTH.Events.RouteNetwork.Infos
         private readonly string? _height;
         public string? Height => _height;
 
+        public RouteSegmentInfo() { }
+
         public RouteSegmentInfo(RouteSegmentKindEnum? kind, string? width, string? height)
         {
             _kind = kind;

@@ -12,6 +12,8 @@ namespace OpenFTTH.Events.Core.Infos
         private readonly string? _remark;
         public string? Remark => _remark;
 
+        public SafetyInfo() { }
+
         public SafetyInfo(string? classification, string? remark)
         {
             _classification = classification;

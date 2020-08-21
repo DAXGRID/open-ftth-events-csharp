@@ -21,6 +21,7 @@ namespace OpenFTTH.Events.Core.Infos
         private readonly string? _sourceInfo;
         public string? SourceInfo => _sourceInfo;
 
+        public MappingInfo() {}
 
         public MappingInfo(MappingMethodEnum? method, string? verticalAccuracy, string? horizontalAccuracy, DateTime? surveyDate, string? sourceInfo)
         {

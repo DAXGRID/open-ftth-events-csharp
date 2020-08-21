@@ -19,6 +19,8 @@ namespace OpenFTTH.Events.Core.Infos
         /// </summary>
         public string? Description => _description;
 
+        public NamingInfo() { }
+
         public NamingInfo(string? name, string? description)
         {
             _name = name;

@@ -15,6 +15,8 @@ namespace OpenFTTH.Events.Core.Infos
         private readonly DateTime? _removalDate;
         public DateTime? RemovalDate => _removalDate;
 
+        public LifecycleInfo() { }
+
         public LifecycleInfo(DeploymentStateEnum? deploymentState, DateTime? installationDate, DateTime? removalDate)
         {
             _deploymentState = deploymentState;

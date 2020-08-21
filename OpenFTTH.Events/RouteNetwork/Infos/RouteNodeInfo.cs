@@ -14,6 +14,8 @@ namespace OpenFTTH.Events.RouteNetwork.Infos
         public RouteNodeFunctionEnum? Function => _function;
 
 
+        public RouteNodeInfo() { }
+
         public RouteNodeInfo(RouteNodeKindEnum? kind, RouteNodeFunctionEnum? function)
         {
             _kind = kind;
