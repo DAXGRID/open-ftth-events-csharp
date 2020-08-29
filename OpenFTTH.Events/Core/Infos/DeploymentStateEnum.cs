@@ -5,7 +5,6 @@ using System.Text.Json.Serialization;
 
 namespace OpenFTTH.Events.Core.Infos
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DeploymentStateEnum
     {
         NotYetInstalled, Installed, InService, OutOfService, Removed
