@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OpenFTTH.Events.RouteNetwork
 {
-    class RouteNetworkEditOperationOccuredEvent : DomainEvent
+    public class RouteNetworkEditOperationOccuredEvent : DomainEvent
     {
         private readonly Guid? _workTaskMrid;
         public Guid? WorkTaskMrid => _workTaskMrid;
