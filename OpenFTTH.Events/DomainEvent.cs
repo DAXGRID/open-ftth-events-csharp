@@ -21,11 +21,19 @@ namespace OpenFTTH.Events
         private readonly DateTime _eventTimestamp;
         public DateTime EventTimestamp => _eventTimestamp;
 
-        public DomainEvent(string eventType, Guid eventId, DateTime eventTimestamp)
+        private readonly string? _applicationName;
+        public string? ApplicationName => _applicationName;
+
+        private readonly string? _applicationInfo;
+        public string? ApplicationInfo => _applicationInfo;
+
+        public DomainEvent(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo)
         {
             _eventType = eventType;
             _eventId = eventId;
             _eventTimestamp = eventTimestamp;
+            _applicationName = applicationName;
+            _applicationInfo = applicationInfo;
         }
     }
 }

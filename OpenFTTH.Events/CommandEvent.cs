@@ -16,34 +16,22 @@ namespace OpenFTTH.Events
 
         private readonly Guid _cmdId;
         public Guid CmdId => _cmdId;
-
-        private readonly bool _isLastEventInCmd;
-        public bool IsLastEventInCmd => _isLastEventInCmd;
-
+     
         private readonly Guid? _workTaskMrid;
         public Guid? WorkTaskMrid => _workTaskMrid;
 
         private readonly string? _userName;
         public string? UserName => _userName;
 
-        private readonly string? _applicationName;
-        public string? ApplicationName => _applicationName;
-
-        private readonly string? _applicationInfo;
-        public string? ApplicationInfo => _applicationInfo;
-
         public RouteNetworkEvent[] _events;
         public RouteNetworkEvent[] RouteNetworkEvent => _events;
 
-        public CommandEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo, RouteNetworkEvent[] events) : base(eventType, eventId, eventTimestamp)
+        public CommandEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo, RouteNetworkEvent[] events) : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
             _cmdType = cmdType;
             _cmdId = cmdId;
-            _isLastEventInCmd = isLastEventInCmd;
             _workTaskMrid = workTaskMrid;
             _userName = userName;
-            _applicationName = applicationName;
-            _applicationInfo = applicationInfo;
             _events = events;
         }
     }

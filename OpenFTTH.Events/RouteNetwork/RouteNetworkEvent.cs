@@ -6,8 +6,8 @@ namespace OpenFTTH.Events.RouteNetwork
 {
     public abstract class RouteNetworkEvent : DomainEvent
     {
-        public RouteNetworkEvent(string eventType, Guid eventId, DateTime eventTimestamp)
-            : base(eventType, eventId, eventTimestamp)
+        public RouteNetworkEvent(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo)
+            : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
         }
     }

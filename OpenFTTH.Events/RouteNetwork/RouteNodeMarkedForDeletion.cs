@@ -10,8 +10,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly Guid _nodeId;
         public Guid NodeId => _nodeId;
 
-        public RouteNodeMarkedForDeletion(string eventType, Guid eventId, DateTime eventTimestamp, Guid nodeId) 
-            : base(eventType, eventId, eventTimestamp)
+        public RouteNodeMarkedForDeletion(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, Guid nodeId) 
+            : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
             _nodeId = nodeId;
         }

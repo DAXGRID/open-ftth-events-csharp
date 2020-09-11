@@ -10,8 +10,8 @@ namespace OpenFTTH.Events.Core
         private readonly SafetyInfo? _safetyInfo;
         public SafetyInfo? SafetyInfo => _safetyInfo;
 
-        public SafetyInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, Guid aggregateId, string aggregateType, SafetyInfo? safetyInfo)
-          : base(eventType, eventId, eventTimestamp, aggregateId, aggregateType)
+        public SafetyInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, Guid aggregateId, string aggregateType, SafetyInfo? safetyInfo)
+          : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo, aggregateId, aggregateType)
         {
             _safetyInfo = safetyInfo;
         }

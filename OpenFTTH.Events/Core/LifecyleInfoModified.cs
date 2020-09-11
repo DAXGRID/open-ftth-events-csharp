@@ -10,8 +10,8 @@ namespace OpenFTTH.Events.Core
         private readonly LifecycleInfo? _lifecycleInfo;
         public LifecycleInfo? LifecycleInfo => _lifecycleInfo;
 
-        public LifecycleInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, Guid aggregateId, string aggregateType, LifecycleInfo? lifecycleInfo)
-          : base(eventType, eventId, eventTimestamp, aggregateId, aggregateType)
+        public LifecycleInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, Guid aggregateId, string aggregateType, LifecycleInfo? lifecycleInfo)
+          : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo, aggregateId, aggregateType)
         {
             _lifecycleInfo = lifecycleInfo;
         }

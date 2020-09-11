@@ -12,8 +12,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly Guid[] _replacedBySegments;
         public Guid[] ReplacedBySegments => _replacedBySegments;
 
-        public RouteSegmentRemoved(string eventType, Guid eventId, DateTime eventTimestamp, Guid segmentId, Guid[] replacedBySegments) 
-            : base(eventType, eventId, eventTimestamp)
+        public RouteSegmentRemoved(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, Guid segmentId, Guid[] replacedBySegments) 
+            : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
             _segmentId = segmentId;
             _replacedBySegments = replacedBySegments;

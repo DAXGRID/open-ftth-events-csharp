@@ -19,8 +19,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly SafetyInfo? _safetyInfo;
         public SafetyInfo? SafetyInfo => _safetyInfo;
 
-        public RouteElementAddedEvent(string eventType, Guid eventId, DateTime eventTimestamp, NamingInfo? namingInfo, LifecycleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo)
-            : base(eventType, eventId, eventTimestamp)
+        public RouteElementAddedEvent(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, NamingInfo? namingInfo, LifecycleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo)
+            : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
             _namingInfo = namingInfo;
             _lifecyleInfo = lifecyleInfo;

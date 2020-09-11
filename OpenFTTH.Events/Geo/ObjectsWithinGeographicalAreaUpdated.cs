@@ -31,8 +31,8 @@ namespace OpenFTTH.Events.Geo
         /// </summary>
         public IdChangeSet[] IdChangeSets => _idChangeSets;
 
-        public ObjectsWithinGeographicalAreaUpdated(string eventType, Guid eventId, DateTime eventTimestamp, string category, EnvelopeInfo envelope, IdChangeSet[] idChangeSets)
-         : base(eventType, eventId, eventTimestamp)
+        public ObjectsWithinGeographicalAreaUpdated(string eventType, Guid eventId, DateTime eventTimestamp, string? applicationName, string? applicationInfo, string category, EnvelopeInfo envelope, IdChangeSet[] idChangeSets)
+         : base(eventType, eventId, eventTimestamp, applicationName, applicationInfo)
         {
             _category = category;
             _envelope = envelope;
