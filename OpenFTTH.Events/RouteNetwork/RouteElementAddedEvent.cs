@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OpenFTTH.Events.RouteNetwork
 {
-    public abstract class RouteElementAddedEvent : DomainEvent
+    public abstract class RouteElementAddedEvent : RouteNetworkEvent
     {
         private readonly NamingInfo? _namingInfo;
         public NamingInfo? NamingInfo => _namingInfo;
