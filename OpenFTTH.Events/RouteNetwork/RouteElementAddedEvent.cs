@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OpenFTTH.Events.RouteNetwork
 {
-    public abstract class RouteElementAddedEvent : RouteNetworkEvent
+    public abstract class RouteElementAddedEvent : DomainEvent
     {
         private readonly NamingInfo? _namingInfo;
         public NamingInfo? NamingInfo => _namingInfo;
@@ -19,9 +19,8 @@ namespace OpenFTTH.Events.RouteNetwork
         private readonly SafetyInfo? _safetyInfo;
         public SafetyInfo? SafetyInfo => _safetyInfo;
 
-
-        public RouteElementAddedEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, NamingInfo? namingInfo, LifecycleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo)
-            : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public RouteElementAddedEvent(string eventType, Guid eventId, DateTime eventTimestamp, NamingInfo? namingInfo, LifecycleInfo? lifecyleInfo, MappingInfo? mappingInfo, SafetyInfo? safetyInfo)
+            : base(eventType, eventId, eventTimestamp)
         {
             _namingInfo = namingInfo;
             _lifecyleInfo = lifecyleInfo;

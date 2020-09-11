@@ -10,8 +10,8 @@ namespace OpenFTTH.Events.Core
         private readonly NamingInfo? _namingInfo;
         public NamingInfo? NamingInfo => _namingInfo;
 
-        public NamingInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid aggregateId, string aggregateType, NamingInfo? namingInfo)
-          : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo, aggregateId, aggregateType)
+        public NamingInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, Guid aggregateId, string aggregateType, NamingInfo? namingInfo)
+          : base(eventType, eventId, eventTimestamp, aggregateId, aggregateType)
         {
             _namingInfo = namingInfo;
         }

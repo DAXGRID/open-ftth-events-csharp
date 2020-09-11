@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OpenFTTH.Events.Core
 {
-    public class ObjectInfoModified : CommandEvent
+    public class ObjectInfoModified : DomainEvent
     {
         private readonly Guid _aggregateId;
         public Guid AggregateId => _aggregateId;
@@ -13,8 +13,8 @@ namespace OpenFTTH.Events.Core
         private readonly string _aggregateType;
         public string AggregateType => _aggregateType;
 
-        public ObjectInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo, Guid aggregateId, string aggregateType)
-          : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public ObjectInfoModified(string eventType, Guid eventId, DateTime eventTimestamp, Guid aggregateId, string aggregateType)
+          : base(eventType, eventId, eventTimestamp)
         {
             _aggregateId = aggregateId;
             _aggregateType = aggregateType;

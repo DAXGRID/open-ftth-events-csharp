@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenFTTH.Events.RouteNetwork;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -31,7 +32,10 @@ namespace OpenFTTH.Events
         private readonly string? _applicationInfo;
         public string? ApplicationInfo => _applicationInfo;
 
-        public CommandEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo) : base(eventType, eventId, eventTimestamp)
+        public RouteNetworkEvent[] _events;
+        public RouteNetworkEvent[] RouteNetworkEvent => _events;
+
+        public CommandEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid? workTaskMrid, string? userName, string? applicationName, string? applicationInfo, RouteNetworkEvent[] events) : base(eventType, eventId, eventTimestamp)
         {
             _cmdType = cmdType;
             _cmdId = cmdId;
@@ -40,6 +44,7 @@ namespace OpenFTTH.Events
             _userName = userName;
             _applicationName = applicationName;
             _applicationInfo = applicationInfo;
+            _events = events;
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace OpenFTTH.Events.RouteNetwork
 {
-    public abstract class RouteNetworkEvent : CommandEvent
+    public abstract class RouteNetworkEvent : DomainEvent
     {
-        public RouteNetworkEvent(string eventType, Guid eventId, DateTime eventTimestamp, string cmdType, Guid cmdId, bool isLastEventInCmd, Guid workTaskMrid, string userName, string? applicationName, string? applicationInfo)
-            : base(eventType, eventId, eventTimestamp, cmdType, cmdId, isLastEventInCmd, workTaskMrid, userName, applicationName, applicationInfo)
+        public RouteNetworkEvent(string eventType, Guid eventId, DateTime eventTimestamp)
+            : base(eventType, eventId, eventTimestamp)
         {
         }
     }
