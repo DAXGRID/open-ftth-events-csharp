@@ -17,7 +17,7 @@ namespace OpenFTTH.Events
         private readonly Guid _cmdId;
         public Guid CmdId => _cmdId;
 
-        public RouteNetworkEvent[] _routeNetworkEvents;
+        private readonly RouteNetworkEvent[] _routeNetworkEvents;
         public RouteNetworkEvent[] RouteNetworkEvents => _routeNetworkEvents;
 
         public RouteNetworkCommand(string cmdType, Guid cmdId, RouteNetworkEvent[] routeNetworkEvents)
