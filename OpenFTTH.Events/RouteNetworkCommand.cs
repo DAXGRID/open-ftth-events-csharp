@@ -17,14 +17,13 @@ namespace OpenFTTH.Events
         private readonly Guid _cmdId;
         public Guid CmdId => _cmdId;
 
-        private readonly RouteNetworkEvent[] _routeNetworkEvents;
-        public RouteNetworkEvent[] RouteNetworkEvents => _routeNetworkEvents;
+        public RouteNetworkEvent[] RouteNetworkEvents { get; set; }
 
         public RouteNetworkCommand(string cmdType, Guid cmdId, RouteNetworkEvent[] routeNetworkEvents)
         {
             _cmdType = cmdType;
             _cmdId = cmdId;
-            _routeNetworkEvents = routeNetworkEvents;
+            RouteNetworkEvents = routeNetworkEvents;
         }
     }
 }

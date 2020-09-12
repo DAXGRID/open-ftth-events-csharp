@@ -3,6 +3,7 @@ using OpenFTTH.Events.Core.Infos;
 using OpenFTTH.Events.RouteNetwork;
 using OpenFTTH.Events.RouteNetwork.Infos;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace OpenFTTH.Events.Tests
@@ -39,11 +40,11 @@ namespace OpenFTTH.Events.Tests
                 userName: "grumme hans",
                 workTaskMrid: Guid.NewGuid(),
                 commands: commands
-            );
+            ); ;
 
             var jsonSettings = new JsonSerializerSettings
             {
-                TypeNameHandling = TypeNameHandling.All
+                TypeNameHandling = TypeNameHandling.Auto
             };
 
             string jsonText = JsonConvert.SerializeObject(editOp, Formatting.Indented, jsonSettings);
