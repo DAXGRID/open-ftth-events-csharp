@@ -28,7 +28,25 @@ namespace OpenFTTH.Events.Tests
                 routeNodeInfo: new RouteNodeInfo(RouteNodeKindEnum.BuildingAccessPoint, RouteNodeFunctionEnum.FlexPoint)
             );
 
-            var routeNetworkEvents = new RouteNetworkEvent[] { routeNodeAddedEvent, routeNodeAddedEvent };
+            var routeSegmentAddedEvent = new RouteSegmentAdded(
+               eventType: typeof(RouteSegmentAdded).Name,
+               eventId: Guid.NewGuid(),
+               eventTimestamp: DateTime.UtcNow,
+               applicationName: "grumme",
+               applicationInfo: "hans",
+               segmentId: Guid.NewGuid(),
+               fromNodeId: Guid.NewGuid(),
+               toNodeId: Guid.NewGuid(),
+               geometry: "blabla",
+               namingInfo: new NamingInfo("node1", "I'm a route segment"),
+               lifecyleInfo: new LifecycleInfo(DeploymentStateEnum.Installed, DateTime.UtcNow, DateTime.Now),
+               safetyInfo: new SafetyInfo("not dangerous", "ikke farlig"),
+               mappingInfo: new MappingInfo(MappingMethodEnum.Drafting, "1 m", "2 m", new DateTime(2020, 01, 01), "GPS"),
+               routeSegmentInfo: new RouteSegmentInfo(RouteSegmentKindEnum.Drilling, "2 m", "1 m")
+           );
+
+
+            var routeNetworkEvents = new RouteNetworkEvent[] { routeNodeAddedEvent, routeSegmentAddedEvent };
             var commands = new RouteNetworkCommand[] { new RouteNetworkCommand("hest", Guid.NewGuid(), routeNetworkEvents) };
 
             var editOp = new RouteNetworkEditOperationOccuredEvent(
@@ -53,7 +71,9 @@ namespace OpenFTTH.Events.Tests
 
             var deserializedEvent = JsonConvert.DeserializeObject<RouteNetworkEditOperationOccuredEvent>(jsonText, jsonSettings);
 
-            Assert.True(deserializedEvent.RouteNetworkCommands[0].RouteNetworkEvents[1] is RouteNodeAdded);
+            Assert.True(deserializedEvent.RouteNetworkCommands[0].RouteNetworkEvents[0] is RouteNodeAdded);
+
+            Assert.True(deserializedEvent.RouteNetworkCommands[0].RouteNetworkEvents[1] is RouteSegmentAdded);
 
         }
     }
