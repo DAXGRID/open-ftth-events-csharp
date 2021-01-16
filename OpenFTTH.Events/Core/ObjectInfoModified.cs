@@ -1,11 +1,9 @@
-﻿using OpenFTTH.Events.Core.Infos;
+﻿using OpenFTTH.Events.RouteNetwork;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OpenFTTH.Events.Core
 {
-    public class ObjectInfoModified : DomainEvent
+    public class ObjectInfoModified : RouteNetworkEvent
     {
         private readonly Guid _aggregateId;
         public Guid AggregateId => _aggregateId;
