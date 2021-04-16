@@ -11,6 +11,6 @@ namespace OpenFTTH.Events
         public string? ApplicationName { get; init; }
         public string? ApplicationInfo { get; init; }
         public string? UserName { get; init; }
-        public Guid WorkTaskId { get; init; }
+        public Guid? WorkTaskId { get; init; }
     }
 }
