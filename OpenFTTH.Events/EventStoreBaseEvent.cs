@@ -4,6 +4,7 @@ namespace OpenFTTH.Events
 {
     public abstract record EventStoreBaseEvent
     {
+        public Guid CorrelationId { get; init; }
         public DateTime Timestamp { get; init; }
         public Guid? IncitingEventId { get; init; }
         public Guid? IncitingCmdId { get; init; }
