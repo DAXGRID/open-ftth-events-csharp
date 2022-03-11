@@ -1,12 +1,11 @@
-﻿using MediatR;
-using System;
+﻿using System;
 
 namespace OpenFTTH.Events
 {
     /// <summary>
     /// Mandatory event attributes, that all events in the Open FTTH system must implement
     /// </summary>
-    public class DomainEvent : IDomainEvent, IRequest
+    public class DomainEvent : IDomainEvent
     {
         public long EventSequenceNumber { get; set; }
 
