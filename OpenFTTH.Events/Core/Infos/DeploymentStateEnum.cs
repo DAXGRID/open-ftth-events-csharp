@@ -7,6 +7,6 @@ namespace OpenFTTH.Events.Core.Infos
 {
     public enum DeploymentStateEnum
     {
-        NotYetInstalled, Installed, InService, OutOfService, Removed
+        NotYetInstalled, Installed, InService, OutOfService, Removed, Planned
     }
 }
